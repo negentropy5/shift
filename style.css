@@ -1,0 +1,199 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body {
+    font-family: sans-serif;
+}
+/* modal */
+#modal {
+    position: absolute;
+    left: -50vw;
+}
+.modal {
+    display: none;
+}
+#modal:checked ~ .modal {
+    display: block;
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(0,0,0,.9);
+    z-index: 2;
+}
+.modal ul {
+    text-shadow: 0 0 8px mediumspringgreen, 0 0 16px mediumspringgreen, 0 0 24px mediumspringgreen,0 0 30px mediumspringgreen;
+    list-style: none;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal li {
+    font-size: 18px;
+    line-height: 2.6;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+.modal li:nth-of-type(1) {animation: show .3s .1s forwards;}
+.modal li:nth-of-type(2) {animation: show .3s .2s forwards;}
+.modal li:nth-of-type(3) {animation: show .3s .3s forwards;}
+.modal li:nth-of-type(4) {animation: show .3s .4s forwards;}
+@keyframes show {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.modal a {
+    text-decoration: none;
+    color: #fff;
+}
+.fa-xmark {
+    cursor: pointer;
+    font-size: 24px;
+}
+main {
+    width: calc(100% - 16px);
+    max-width: 400px;
+    margin: 0 auto;
+}
+h1 {
+    position: relative;
+    font-family: serif;
+    margin: 16px 0;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    padding: 6px 0;
+    border-top: 4px solid #d8dcdc;
+    border-right: 4px solid #666;
+    border-bottom: 4px solid #333;
+    border-left: 4px solid #868888;
+    border-radius: 0;
+    background-image: -webkit-linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+}
+.menu {
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    right: 5px;
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #fff,0 0 30px #fff;
+}
+.count {
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.05;
+}
+h2 {
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 16px;
+    text-shadow:
+    1px 1px 2px black,
+    0 0 1em blue,
+    0 0 0.2em blue;
+    color: white;
+    font:1.4em Georgia,serif;
+}
+input, select {
+    border: 1px solid #333;
+    border-radius: 0;
+    font-size: 16px;
+    height: 26px; line-height: 26px;
+    padding: 0 4px;
+}
+input[type=submit] {
+    background: #555;
+    color: #fff;
+    padding: 0 8px;
+}
+.register_form {
+    margin-bottom: 32px;
+}
+.register_form > div {
+    margin-bottom: 3px;
+    display: flex;
+    gap: 3px;
+}
+input[name="hdn"] {
+    width: 0;
+    flex: 1;
+}
+input[name="pas"] {
+    width: 0;
+    flex: 1;
+}
+.participant {
+    display: flex;
+    gap: 3px;
+}
+input[name="add_hdn"] {
+    width: 0;
+    flex: 1;
+}
+input[name="add_pas"] {
+    width: 0;
+    flex: 1;
+}
+
+section {
+    position: relative;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 3px;
+    margin-bottom: 24px;
+}
+section::before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #333 transparent;
+    border-style: solid;
+}
+section::after {
+    position: absolute;
+    content: '';
+    top: -8.7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+}
+.x_btn {
+    padding: 4px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-bottom: 1px solid #333;
+    margin-bottom: 16px;
+    gap: 4px;
+}
+.x_btn.under {
+    justify-content: left;
+    border: none;
+    margin: 0;
+}
+.fa-rectangle-xmark {
+    color: #555;
+    font-size: 22px;
+}
+.participant {
+    margin-top: 16px;
+}
+.ip {
+    color: #999;
+    font-size: 13px;
+}
